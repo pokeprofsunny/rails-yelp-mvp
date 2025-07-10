@@ -1,0 +1,29 @@
+<h1>Restaurants#new</h1>
+<p>Find me in app/views/restaurants/new.html.erb</p>
+<h1>Add a New Restaurant</h1>
+
+<%= form_with(model: @restaurant, local: true) do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number %><br>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :category %><br>
+    <%= form.select :category, Restaurant::CATEGORIES %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Restaurant" %>
+  </div>
+<% end %>
